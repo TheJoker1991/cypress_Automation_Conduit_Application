@@ -3,7 +3,12 @@
     "cypress": "^10.11.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "node-xlsx": "^0.21.0"
+    
   },
+  "scripts": {
+    "test": "node_modules//.bin//cypress run",
+    "headTest": "npm run test -- --headed",
+    "recordDashboardTest": "npm run test --record --key bb427dc9-50b9-4963-8a72-60fc812c9478"},
   "dependencies": {
     "buffer": "^6.0.3",
     "neat-csv": "^7.0.0"
