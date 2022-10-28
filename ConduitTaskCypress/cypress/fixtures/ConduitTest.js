@@ -25,7 +25,9 @@ it('My Login test Case with default user', function()
     locators.getSignUpButton().click()
     cy.signup(this.data.username2, this.data.email2, this.data.password2)
     cy.get('.btn').click()
-    if(cy.get('.error-messages li'))
+
+
+    if(cy.get('div .error-messages :visible'))
     {
         cy.wait(2000)
         locators.getSignInButtonHomePageConduit().click()
@@ -33,12 +35,12 @@ it('My Login test Case with default user', function()
 
         locators.getSignInButton().click()
     }
-    else if (!cy.get('.error-messages li'))
+    else
     {
-        cy.pause()
-        cy.get("//body/div[@id='main']/div[1]/nav[1]/div[1]/ul[1]/li[4]/a[1]").should('have.value', this.data.username2)
 
+        locators.getSignInButton().click()
     }
+   
 
 })
 
